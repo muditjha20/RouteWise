@@ -1,6 +1,6 @@
 # 🧭 RouteWise - Multi-Stop Trip Optimizer with Google Maps export
 
-**RouteWise** is a powerful, user-friendly tool that helps anyone plan the **shortest round-trip through multiple locations**, based on **real road travel time** — something Google Maps doesn’t do natively.
+**RouteWise** is a powerful, user-friendly tool that helps anyone plan the **shortest round-trip through multiple locations**, based on **real road travel time** - something Google Maps doesn’t do natively.
 
 Whether you're running errands or planning deliveries, RouteWise ensures you're taking the **most efficient route**, with turn-by-turn navigation ready to open in Google Maps.
 
@@ -50,7 +50,7 @@ Most mapping apps let you add multiple stops — but **don’t optimize the orde
 
 ## 💡 Example Use Case
 
-> **Riya**, a university student, needs to visit 10 stores across the city and return home.  
+> **Mudit**, a university student, needs to visit 10 stores across the city and return home.  
 > She enters the addresses, clicks "Optimize Route," and within seconds sees the shortest timed loop.  
 > She avoids backtracking, saves over 35% in fuel and time, and opens the optimized route directly in Google Maps.
 
@@ -90,7 +90,7 @@ Most mapping apps let you add multiple stops — but **don’t optimize the orde
 
 Built with purpose by **Mudit Mayank Jha**  
 🎓 B.Sc. Computer Science @ University of the West Indies  
-🇺🇸 <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="US Flag" width="20" style="vertical-align: middle;"/> Academic Exchange at University of Richmond  
+<img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="US Flag" width="20" style="vertical-align: middle;"/> Academic Exchange at University of Richmond  
 🔗 [GitHub](https://github.com/muditjha20)
 
 ---
