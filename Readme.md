@@ -1,4 +1,4 @@
-# 🧭 RouteWise — Multi-Stop Trip Optimizer with Google Maps export
+# 🧭 RouteWise - Multi-Stop Trip Optimizer with Google Maps export
 
 **RouteWise** is a powerful, user-friendly tool that helps anyone plan the **shortest round-trip through multiple locations**, based on **real road travel time** — something Google Maps doesn’t do natively.
 
