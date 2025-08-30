@@ -1,14 +1,4 @@
 # app.py
-# Entry point for the Multi-Stop Route Optimizer (MVP)
-# Depends on:
-#   src/geo.py         -> parse_addresses, geocode_one
-#   src/algorithms.py  -> build_distance_matrix, held_karp_loop
-#   src/maps.py        -> render_route_map
-#   src/osrm.py        -> osrm_table
-#
-# Run:
-#   .\.venv\Scripts\activate.bat
-#   streamlit run app.py
 
 import time
 from typing import List, Tuple
@@ -22,7 +12,7 @@ from src.maps import render_route_map_osrm
 from src.osrm import osrm_table, osrm_route_path
 
 
-st.set_page_config(page_title="Multi-Stop Route Optimizer (MVP)", page_icon=None, layout="wide")
+st.set_page_config(page_title="Multi-Stop Route Optimizer", page_icon=None, layout="wide")
 
 MAX_STOPS = 15  # including Home on line 1
 
@@ -62,6 +52,7 @@ left, right = st.columns([1.2, 1], gap="large")
 with left:
     default_placeholder = (
         "University of the West Indies, St. Augustine, Trinidad and Tobago\n"
+        "6 Victoria Avenue, Port of Spain\n"
         "Hyatt Regency Trinidad, Port of Spain, Trinidad and Tobago\n"
         "Trinidad Ornamental, Eastern Main Road, San Juan, Trinidad and Tobago"
     )
@@ -122,7 +113,7 @@ if st.session_state.run_optimize:
             st.warning(f"Reduce your list to ≤ {MAX_STOPS} lines.")
             st.session_state.run_optimize = False
         else:
-            # 1) Geocode (visible)
+            # Geocode (visible)
             st.write("Starting geocoding…")
             progress = st.progress(0.0, text="Geocoding addresses…")
             coords: List[Tuple[float, float, str]] = []
@@ -145,7 +136,7 @@ if st.session_state.run_optimize:
                 st.session_state.run_optimize = False
                 st.stop()
 
-            # 2) OSRM table: durations (s) + distances (m)
+            # OSRM table: durations (s) + distances (m)
             st.write("Fetching road travel time & distance from OSRM…")
             used_fallback = False
             try:
@@ -157,11 +148,11 @@ if st.session_state.run_optimize:
                 cost_matrix = np.array(distances_m, dtype=float)  # minimize distance
                 used_fallback = True
 
-            # 3) Optimize (Held–Karp)
+            # Optimize (Held–Karp)
             st.write("Running Held–Karp (optimal)…")
             route, total_cost = held_karp_loop(cost_matrix)
 
-            # 4) Compute total time and distance along the chosen route
+            # Compute total time and distance along the chosen route
             def sum_along_route(mat: list[list[float]], route_idx: list[int]) -> float:
                 total = 0.0
                 for a, b in zip(route_idx[:-1], route_idx[1:]):
@@ -175,7 +166,7 @@ if st.session_state.run_optimize:
                 total_seconds = sum_along_route(durations_s, route)
                 total_meters = sum_along_route(distances_m, route)
 
-                        # 5) Try to fetch actual road path for the optimized order
+                        # Try to fetch actual road path for the optimized order
             road_path = None
             try:
                 road_path = osrm_route_path(coords, route, profile="driving")
