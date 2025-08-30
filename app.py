@@ -33,7 +33,7 @@ if "has_results" not in st.session_state:
     st.session_state.has_results = False
 
 # ---------------- UI Header ----------------
-st.title("Multi-Stop Route Optimizer (MVP)")
+st.title("Multi-Stop Route Optimizer")
 st.caption("Enter up to 15 addresses. First line is Home (start and end).")
 
 with st.expander("Notes", expanded=False):
