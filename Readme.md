@@ -88,9 +88,7 @@ Most mapping apps let you add multiple stops — but **don’t optimize the orde
 
 ## 👨‍💻 Author
 
-Built with purpose by **Mudit Mayank Jha**  
-🎓 B.Sc. Computer Science @ University of the West Indies  
-<img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="US Flag" width="20" style="vertical-align: middle;"/> Academic Exchange at University of Richmond  
+Built with purpose by **Mudit Mayank Jha**   
 🔗 [GitHub](https://github.com/muditjha20)
 
 ---
